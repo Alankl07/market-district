@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card-left">
+        <img src="{{showImageProduct(product.image)}}" alt="product">
+    </div>
+    <div class="card-right">
+        <div>
+            <div class="title">
+                <h3>{{product.name}}</h3>
+            </div>
+            <div class="description">
+                <small>{{product.description}}</small>
+            </div>
+        </div>
+        <div class="price">
+            <h2>{{product.price}}</h2>
+            <p>{{product.obsProduct}}</p>
+        </div>
+        <div class="total">
+            <b>Total: </b>
+            <label>{{total()}}</label>
+        </div>
+        <div class="actions">
+            <b >Qtd:</b>
+            <input type="number" min="0" value="1" class="form-control" [(ngModel)]="qtd">
+            <button class="btn btn-primary" >Adicionar</button>
+            <!-- <b>A quantidade selecionada é referente ao Kg </b> -->
+        </div>
+    </div>
+</div>
