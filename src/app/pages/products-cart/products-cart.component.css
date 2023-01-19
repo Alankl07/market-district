@@ -1,0 +1,85 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 90px;
+}
+
+.container .card{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .divImage img{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 10px;   
+}
+
+.container .card .divInfo{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.container .card .divInfo label{
+    margin: 10px;
+}
+
+.container .card .topInfo{
+    display: flex;
+    width: auto;
+    background-color: blue;
+    padding: 10px;
+    color: #fff;
+}
+
+.container .card .centerInfo{
+    display: flex;
+}
+
+.container .card .centerInfo h4{
+    margin-left: 10px;
+}
+
+.container .card .footerInfo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.container .card .footerInfo input{
+    width: 70px;
+    border: 0;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.container footer{
+    position: fixed;
+    bottom: 0;
+    width: 86.5%;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.container footer div{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-right: 20px;
+}

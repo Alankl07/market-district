@@ -8,13 +8,15 @@ import { ProductsMarketComponent } from './pages/products-market/products-market
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsDetailsComponent } from './pages/products-details/products-details.component';
 import { FormsModule } from '@angular/forms';
+import { ProductsCartComponent } from './pages/products-cart/products-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsMarketComponent,
-    ProductsDetailsComponent
+    ProductsDetailsComponent,
+    ProductsCartComponent
   ],
   imports: [
     BrowserModule,

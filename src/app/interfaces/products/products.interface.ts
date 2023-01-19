@@ -4,5 +4,6 @@ export interface ProductsMarketInterface {
     description: string,
     price: string,
     image: string,
-    obsProduct: string
+    obsProduct: string,
+    quantity?: number
 }
