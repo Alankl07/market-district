@@ -16,6 +16,10 @@
     font-weight: bold;
 }
 
+.content .infoApp label:hover{
+    cursor: pointer;
+}
+
 .content .infoApp img {
     width: 70px;
     height: 70px;
@@ -31,11 +35,11 @@
 
 .content .actionsBar label{
     margin-left: 20px;
-    transition: 0.5s;
+    transition: 0.2s;
+    color: #fff;
 }
 
 .content .actionsBar label:hover{
-    color: #fff;
     cursor: pointer;
     font-weight: bold;
 }
