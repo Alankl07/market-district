@@ -1,0 +1,41 @@
+.content{
+    display: flex;
+    background-color: blue;
+    justify-content: space-between;
+    margin: 0;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.content .infoApp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.content .infoApp img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.content .actionsBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .actionsBar label{
+    margin-left: 20px;
+    transition: 0.5s;
+}
+
+.content .actionsBar label:hover{
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
