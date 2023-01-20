@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-interface market{
+interface Market{
   name: string,
   image: string
 }
@@ -13,10 +14,12 @@ interface market{
 
 export class HomeComponent implements OnInit {
 
-  markets: market[] = []
+  markets: Market[] = []
   market_image_default = '../../../assets/market-default.jpg'
 
-  constructor() { }
+  constructor(
+    private routes: Router
+  ) { }
 
   ngOnInit(): void {
     this.getMarkets()
@@ -30,7 +33,13 @@ export class HomeComponent implements OnInit {
       {name: 'Mercado 4', image: ''},
       {name: 'Mercado 5', image: ''},
       {name: 'Mercado 6', image: ''},
+      {name: 'Mercado 7', image: ''},
+      {name: 'Mercado 8', image: ''},
     ]
+  }
+
+  enterMarket(market: Market){
+    this.routes.navigate(["/products-market"])
   }
 
 }

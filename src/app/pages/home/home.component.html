@@ -1,8 +1,10 @@
-<div class="container">
-    <div *ngFor="let market of markets" class="content">
-        <div class="card">
-            <img src="{{market.image ? market.image : market_image_default }}" alt="market">
-            <h3>{{market.name}}</h3>
+<div class="divContainer">
+    <div  class="content">
+        <div *ngFor="let market of markets">
+            <div class="card" (click)="enterMarket(market)" >
+                <img src="{{market.image ? market.image : market_image_default }}" alt="market">
+                <label>{{market.name}}</label>
+            </div>
         </div>
     </div>
 </div>

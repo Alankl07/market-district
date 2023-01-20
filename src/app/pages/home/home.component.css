@@ -1,15 +1,19 @@
-.container{
+.divContainer{
     display: flex;
-    height: 100vh;
-    flex-wrap: wrap;
+    justify-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .content{
+    display: flex;
+    position: relative;
     flex-direction: row;
-    height: 100px;
+    left: 5%;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    
 }
 
 .content .card{
@@ -19,14 +23,26 @@
     flex-direction: column;
     background: #fff;
     border-radius: 10px;
-    width: 190px;
-    margin: 5px;
+    width: 210px;
+    margin: 10px;
+    transition: 0.2s;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     
 }
 
+.content .card:hover{
+    cursor: pointer;
+    width: 215px;
+}
+
 .content .card img{
     /* width: 180px; */
     height: 150px;
+}
+
+.content .card label{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
