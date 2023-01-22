@@ -27,14 +27,14 @@ export class HomeComponent implements OnInit {
 
   getMarkets(){
     this.markets = [
-      {name: 'Mercado 1', image: ''},
-      {name: 'Mercado 2', image: ''},
-      {name: 'Mercado 3', image: ''},
-      {name: 'Mercado 4', image: ''},
-      {name: 'Mercado 5', image: ''},
-      {name: 'Mercado 6', image: ''},
-      {name: 'Mercado 7', image: ''},
-      {name: 'Mercado 8', image: ''},
+      {name: 'Assai Acadadista', image: '../../../assets/acaiatacadao.jfif'},
+      {name: 'Atacadão', image: '../../../assets/atacadao.png'},
+      {name: 'Big Bompreço', image: '../../../assets/bigbompreco.png'},
+      {name: 'G Barbosa', image: '../../../assets/gbarbosa.png'},
+      {name: 'Mercantil', image: '../../../assets/mercantil.png'},
+      {name: 'Brasil Mercado', image: ''},
+      {name: 'Atacadão Junior', image: '../../../assets/atacadao.png'},
+      {name: 'G Barbosa Junior ', image: '../../../assets/gbarbosa.png'},
     ]
   }
 
