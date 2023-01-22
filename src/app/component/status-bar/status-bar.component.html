@@ -1,12 +1,17 @@
 <div class="content">
-    <div class="infoApp">
-        <!-- <img src="{{imag_ditrict_market}}" alt="district_market"> -->
-        <label (click)="returnInit()" >Market Distric</label>
+    <div class="infoApp" (click)="returnInit()">
+        <img src="{{logo_ditrict_market}}" alt="district_market">
+        <label>Market Distric</label>
     </div>
     <div class="actionsBar"> 
-        <input type="text" class="form-control">
-        <label>Contato</label>
-        <label>Autenticação</label>
-        <label (click)="cartMarket()" >Carrinho</label>
+        <!-- <div>
+            <input type="text" class="form-control">
+            <button >
+                <i class="fa fa-search"></i>
+            </button>
+        </div> -->
+        <!-- <label>Contato</label> -->
+        <label (click)="cartMarket()" ><i class="fa fa-opencart"></i> Carrinho</label>
+        <label (click)="login()" ><i class="fa fa-user-o"></i> Login</label>
     </div>
 </div>

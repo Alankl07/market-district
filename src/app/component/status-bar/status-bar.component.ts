@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class StatusBarComponent implements OnInit {
 
-  imag_ditrict_market = '../../../assets/district_market.jfif'
+  logo_ditrict_market = '../../../assets/logo_ditrict_market.png'
 
   constructor(
     private router: Router
@@ -23,6 +23,11 @@ export class StatusBarComponent implements OnInit {
 
   cartMarket(){
     this.router.navigate(["/cart-market"])
+  }
+
+  login(){
+    window.alert("Oppen login")
+    this.returnInit()
   }
 
 }

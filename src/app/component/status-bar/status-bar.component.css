@@ -16,13 +16,14 @@
     font-weight: bold;
 }
 
-.content .infoApp label:hover{
+.content .infoApp:hover, .infoApp label{
     cursor: pointer;
 }
 
 .content .infoApp img {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
     border-radius: 50%;
     font-size: 12px;
 }
@@ -33,13 +34,43 @@
     justify-content: center;
 }
 
-.content .actionsBar label{
+.content .actionsBar div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .actionsBar div input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.content .actionsBar div button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 0;
+    width: 50px;
+    height: 38px;
+}
+
+.content .actionsBar div button i{
+    color: black;
+    margin: 0;
+}
+
+.content .actionsBar label i{
+    margin: 0;
+}
+
+.content .actionsBar label, i{
     margin-left: 20px;
     transition: 0.2s;
     color: #fff;
 }
 
-.content .actionsBar label:hover{
+.content .actionsBar label:hover, i:hover{
     cursor: pointer;
     font-weight: bold;
 }
