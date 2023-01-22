@@ -6,7 +6,7 @@ import { ProductsMarketComponent } from './pages/products-market/products-market
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
-  {path: "products-market", component: ProductsMarketComponent},
+  {path: "products-market/:id", component: ProductsMarketComponent},
   {path: "cart-market", component: ProductsCartComponent}
 ];
 

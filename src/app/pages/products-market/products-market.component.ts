@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsMarketInterface } from 'src/app/interfaces/products/products.interface';
 import { showImageProduct } from 'src/app/pipes/images/image.pipes';
+import { addProductInCart, generateProduct, products } from 'src/app/ultil/markets';
 import { ProductsDetailsComponent } from '../products-details/products-details.component';
 
 @Component({
@@ -12,12 +14,14 @@ import { ProductsDetailsComponent } from '../products-details/products-details.c
 export class ProductsMarketComponent implements OnInit {
 
   products: ProductsMarketInterface[] = []
-
+  market_id: number = 0
   constructor(
-    private ngbModal: NgbModal
+    private ngbModal: NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.market_id = Number(this.router.url.split("/")[2])
     this.getProductFromMarket()
   }
 
@@ -26,33 +30,21 @@ export class ProductsMarketComponent implements OnInit {
   }
 
   getProductFromMarket(){
-
-    const getProducts = []
-
-    for (let index = 0; index < 10; index++) {
-      getProducts.push({
-        id: getProducts.length + 1,
-        name: 'Acém Bovino sem Osso',
-        description: 'O Acém Bovino está localizado na parte dianteira do boi, é uma carne de ótima qualidade, rígida e dura, é muito utilizada para o preparo de tortas, escondidinhos, ensopadinhos e pratos com molhos. Escolha a melhor opção de preparo para o seu paladar.',
-        obsProduct: 'Preço/kg',
-        image: '',
-        price: '15,00'
-      })      
-    }
-
-    this.products = getProducts
+    generateProduct()
+    this.products = products
   }
 
   openDetailsProduct(product: ProductsMarketInterface){
     const refModal = this.ngbModal.open(ProductsDetailsComponent, { size: "xl" })
     refModal.componentInstance.product = product
+    refModal.componentInstance.market_id = this.market_id
     refModal.result.then(res => {
       refModal.close()
     })
   }
 
-  addInCar(){
-    window.prompt('addInCar')
+  addInCar(product: any){
+    addProductInCart(product, this.market_id)
   }
 
 }

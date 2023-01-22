@@ -10,9 +10,9 @@
             <div class="card-footer">
                 <div style="display: flex; justify-content: center; align-items: center;">
                     <b>Qtd:</b>
-                    <input type="number" value="1" min="0" class="form-control">
+                    <input type="number" value="1" min="1" class="form-control" [(ngModel)]="product.quantity">
                 </div>
-                <button (click)="addInCar()" class="btn btn-primary">Comprar</button>
+                <button (click)="addInCar(product)" class="btn btn-primary">Comprar</button>
             </div>
         </div>
     </div>

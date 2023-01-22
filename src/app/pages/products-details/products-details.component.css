@@ -27,9 +27,30 @@
 }
 
 .container .card-right .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #0000FF;
     padding: 10px;
     color: #fff;
+}
+
+.container .card-right .title button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    background-color: #fff;
+    color: black;
+    transition: 0.3s;
+}
+
+.container .card-right .title button:hover{
+    color: red;
+    border: 1px red solid;
+    transition: 0.3s;
 }
 
 .container .card-right .description{

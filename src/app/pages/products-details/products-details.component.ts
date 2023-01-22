@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsMarketInterface } from 'src/app/interfaces/products/products.interface';
 import { showImageProduct } from 'src/app/pipes/images/image.pipes';
+import { addProductInCart } from 'src/app/ultil/markets';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-products-details',
@@ -9,28 +13,43 @@ import { showImageProduct } from 'src/app/pipes/images/image.pipes';
 })
 export class ProductsDetailsComponent implements OnInit {
 
+  constructor(
+    private ngbActiveModal: NgbActiveModal
+  ) { }
+
   product: ProductsMarketInterface = {
     description: '',
     image: '',
     name: '',
     obsProduct: '',
     price: ''
-  } 
-
+  }
+  market_id: number = 0
   qtd: number = 1
-
-  constructor() { }
 
   ngOnInit(): void {
   }
 
-  showImageProduct(url: string){
+  showImageProduct(url: string) {
     return showImageProduct(url)
   }
 
-  total(){
+  total() { 
     console.log(this.product.price, this.qtd)
-    return (Number(this.product.price.replace(",",".")) * Number(this.qtd)).toFixed(2).replace(".",",")
+    return (Number(this.product.price.replace(",", ".")) * Number(this.qtd)).toFixed(2).replace(".", ",")
+  }
+
+  addInCart(product: any) {
+    if (!this.market_id) {
+      Swal.fire("Opsss...", "Mercado não encontrado.", "warning")
+      return
+    }
+    addProductInCart(product, this.market_id)
+    this.close()
+  }
+
+  close() {
+    this.ngbActiveModal.close({result: true})
   }
 
 }

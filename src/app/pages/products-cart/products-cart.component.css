@@ -14,6 +14,21 @@
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.container .emptyCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    margin-top: 10%;
+    font-weight: bold;
+}
+
+.container .emptyCart i{
+    font-size: 150px;
+    color: #9c9c9c;
+    margin-bottom: 20px;
+}
+
 .container .card .divImage img{
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -65,15 +80,13 @@
 .container footer{
     position: fixed;
     bottom: 0;
-    width: 86.5%;
+    width: 100%;
     display: flex;
-    background-color: #fff;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-bottom: 10px;
+    background-color: rgba(0, 0, 255, 0.557);
     padding: 10px;
     justify-content: space-between;
     text-align: center;
+    color: #fff;
 }
 
 .container footer div{
@@ -82,4 +95,8 @@
     padding: 0;
     margin: 0;
     margin-right: 20px;
+}
+
+.container footer button{
+    background-color: blue;
 }

@@ -6,7 +6,7 @@
         <div>
             <div class="title">
                 <h3>{{product.name}}</h3>
-                <button>sads</button>
+                <button (click)="close()" class="btn btn-default" ><i class="fa fa-close"></i></button>
             </div>
             <div class="description">
                 <small>{{product.description}}</small>
@@ -23,7 +23,7 @@
         <div class="actions">
             <b >Qtd:</b>
             <input type="number" min="0" value="1" class="form-control" [(ngModel)]="qtd">
-            <button class="btn btn-primary" >Adicionar</button>
+            <button class="btn btn-primary" (click)="addInCart(product)" >Adicionar</button>
             <!-- <b>A quantidade selecionada é referente ao Kg </b> -->
         </div>
     </div>

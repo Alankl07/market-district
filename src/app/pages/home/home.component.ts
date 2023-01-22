@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { markets_util } from 'src/app/ultil/markets';
 
 interface Market{
+  id: number,
   name: string,
   image: string
 }
@@ -26,20 +28,11 @@ export class HomeComponent implements OnInit {
   }
 
   getMarkets(){
-    this.markets = [
-      {name: 'Assai Acadadista', image: '../../../assets/acaiatacadao.jfif'},
-      {name: 'Atacadão', image: '../../../assets/atacadao.png'},
-      {name: 'Big Bompreço', image: '../../../assets/bigbompreco.png'},
-      {name: 'G Barbosa', image: '../../../assets/gbarbosa.png'},
-      {name: 'Mercantil', image: '../../../assets/mercantil.png'},
-      {name: 'Brasil Mercado', image: ''},
-      {name: 'Atacadão Junior', image: '../../../assets/atacadao.png'},
-      {name: 'G Barbosa Junior ', image: '../../../assets/gbarbosa.png'},
-    ]
+    this.markets = markets_util
   }
 
   enterMarket(market: Market){
-    this.routes.navigate(["/products-market"])
+    this.routes.navigate(["/products-market/"+market.id])
   }
 
 }
