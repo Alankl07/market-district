@@ -70,6 +70,10 @@ export class ProductsCartComponent implements OnInit {
   }
 
   finishSale(products: CartMarketValueInterface[]) {
+    if(!cart_market.length) {
+      Swal.fire("MD Informa", "Seu carrinho está vazio.", "info")
+      return
+    }
     Swal.fire("Sucesso!", "Compra finalizada com sucesso.", "success")
     cart_market.splice(0, cart_market.length)
   }

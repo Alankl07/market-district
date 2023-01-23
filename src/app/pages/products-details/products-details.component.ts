@@ -25,8 +25,6 @@ export class ProductsDetailsComponent implements OnInit {
     price: ''
   }
   market_id: number = 0
-  qtd: number = 1
-
   ngOnInit(): void {
   }
 
@@ -35,8 +33,7 @@ export class ProductsDetailsComponent implements OnInit {
   }
 
   total() { 
-    console.log(this.product.price, this.qtd)
-    return (Number(this.product.price.replace(",", ".")) * Number(this.qtd)).toFixed(2).replace(".", ",")
+    return (Number(this.product.price.replace(",", ".")) * Number(this.product.quantity)).toFixed(2).replace(".", ",")
   }
 
   addInCart(product: any) {

@@ -72,7 +72,7 @@ export function addProductInCart(product: PorductInterface, market_id: number){
     const market = cart_market.find(market => market.market_id == market_id)
     if(market){
       const findProduct = market.products.find(productFind => productFind.id == product.id )
-      if(findProduct) findProduct.quantity++ 
+      if(findProduct) findProduct.quantity = findProduct.quantity + product.quantity 
       else market.products.push(product)
     }else{
       const market = markets_util.find(market => market.id == market_id)
