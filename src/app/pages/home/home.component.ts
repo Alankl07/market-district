@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { markets_util } from 'src/app/ultil/markets';
 
@@ -16,6 +16,8 @@ interface Market{
 
 export class HomeComponent implements OnInit {
 
+  @Output() testeEmitter: EventEmitter<any> = new EventEmitter()
+
   markets: Market[] = []
   market_image_default = '../../../assets/market-default.jpg'
 
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMarkets()
+    this.testeEmitter.emit({ teste: 'teste'})
   }
 
   getMarkets(){

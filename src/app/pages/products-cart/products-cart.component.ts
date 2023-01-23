@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsMarketInterface } from 'src/app/interfaces/products/products.interface';
-import { showImageProduct } from 'src/app/pipes/images/image.pipes';
+import { showImageMarket, showImageProduct } from 'src/app/pipes/images/image.pipes';
 import { CartMarketValueInterface, cart_market } from 'src/app/ultil/markets';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-products-cart',
@@ -14,6 +15,8 @@ export class ProductsCartComponent implements OnInit {
 
   constructor() { }
 
+  subTotal: number = 0
+
   ngOnInit(): void {
     this.getProductFromMarket()
   }
@@ -22,8 +25,12 @@ export class ProductsCartComponent implements OnInit {
     return showImageProduct(url)
   }
 
+  getimageMarket(url: string){
+    return showImageMarket(url)
+  }
+
   getProductFromMarket() {
-    this.productsInCart = cart_market
+    this.productsInCart = cart_market    
   }
 
   totalPrice(price: string, id: number | undefined, market_id: number) {
@@ -45,6 +52,7 @@ export class ProductsCartComponent implements OnInit {
         subTotal = Number(subTotal.toFixed(2).replace(',', '.')) + Number((Number(product.price.replace(",", ".")) * qtd).toFixed(2))
       })
 
+      product['subTotal'] = subTotal.toFixed(2).replace('.', ',') 
       total = total + subTotal
     })
 
@@ -62,7 +70,8 @@ export class ProductsCartComponent implements OnInit {
   }
 
   finishSale(products: CartMarketValueInterface[]) {
-    window.alert(`Compra finalizada.`)
+    Swal.fire("Sucesso!", "Compra finalizada com sucesso.", "success")
+    cart_market.splice(0, cart_market.length)
   }
 
 }

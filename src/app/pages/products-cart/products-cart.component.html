@@ -4,8 +4,12 @@
         <small>Seu carrinho está vazio.</small>
     </div>
     <div class="content" *ngFor="let market of productsInCart; let market_index = index">
-        <div>
-            <h4>{{market.market_name}}</h4>
+        <div class="marketName" >
+            <div>
+                <img src="{{getimageMarket(market.image)}}" alt="">
+                <h4>{{market.market_name}}</h4>
+            </div>
+            <h4>SubTotal: {{market.subTotal}}</h4>
         </div>
         <div *ngFor="let product of market.products; let product_index= index">
             <div class="card">

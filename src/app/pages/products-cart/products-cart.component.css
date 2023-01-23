@@ -5,11 +5,43 @@
     padding-bottom: 90px;
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.content .marketName{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.content .marketName div{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.content .marketName img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .container .card{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 7px;
     overflow: hidden;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }

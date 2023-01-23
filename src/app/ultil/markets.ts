@@ -16,21 +16,32 @@ interface PorductInterface{
     quantity: number
 }
 
+const img_assai = '../../../assets/assaiatacadao.jfif'
+const img_atacadao = '../../../assets/atacadao.png'
+const img_big = '../../../assets/bigbompreco.png'
+const img_gbarbosa = '../../../assets/gbarbosa.png'
+const img_mercantil = '../../../assets/mercantil.png'
+const img_atajun = '../../../assets/atacadao.png'
+const img_brasil = ''
+const img_gbjun = '../../../assets/gbarbosa.png'
+
 export interface CartMarketValueInterface{
     market_id: number,
     market_name: string,
+    image: string,
+    subTotal?: string,
     products: PorductInterface[]
 }
 
 export const markets_util = [
-    { name: 'Assai Acadadista', image: '../../../assets/acaiatacadao.jfif' },
-    { name: 'Atacadão', image: '../../../assets/atacadao.png' },
-    { name: 'Big Bompreço', image: '../../../assets/bigbompreco.png' },
-    { name: 'G Barbosa', image: '../../../assets/gbarbosa.png' },
-    { name: 'Mercantil', image: '../../../assets/mercantil.png' },
-    { name: 'Brasil Mercado', image: '' },
-    { name: 'Atacadão Junior', image: '../../../assets/atacadao.png' },
-    { name: 'G Barbosa Junior ', image: '../../../assets/gbarbosa.png' },
+    { name: 'Assai Acadadista', image: img_assai },
+    { name: 'Atacadão', image: img_atacadao },
+    { name: 'Big Bompreço', image: img_big },
+    { name: 'G Barbosa', image: img_gbarbosa },
+    { name: 'Mercantil', image: img_mercantil },
+    { name: 'Brasil Mercado', image: img_brasil },
+    { name: 'G Barbosa Junior ', image: img_gbjun },
+    { name: 'Atacadão Junior', image: img_atajun },
 ].map((market: any, i) => {
     market['id'] = i + 1
     return market
@@ -60,11 +71,15 @@ export function addProductInCart(product: PorductInterface, market_id: number){
     Swal.fire("Sucesso!", `Produdo adicionado no carrinho.`, "success")
     const market = cart_market.find(market => market.market_id == market_id)
     if(market){
-      market.products.push(product)
+      const findProduct = market.products.find(productFind => productFind.id == product.id )
+      if(findProduct) findProduct.quantity++ 
+      else market.products.push(product)
     }else{
+      const market = markets_util.find(market => market.id == market_id)
       cart_market.push({
         market_id,
-        market_name: markets_util.find(market => market.id == market_id).name,
+        market_name: market.name,
+        image: market.image,
         products: [product]
       })  
     }

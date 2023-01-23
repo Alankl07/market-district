@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { showImageMarket, showImageProduct } from 'src/app/pipes/images/image.pipes';
 
 @Component({
   selector: 'app-status-bar',
@@ -8,13 +9,18 @@ import { Router } from '@angular/router';
 })
 export class StatusBarComponent implements OnInit {
 
-  logo_ditrict_market = '../../../assets/logo_ditrict_market.png'
+
+  @Input() market: any
 
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void {
+  }
+
+  showImage(url: string){
+    return showImageMarket(url)
   }
 
   returnInit(){
