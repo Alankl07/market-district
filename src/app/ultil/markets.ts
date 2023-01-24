@@ -16,14 +16,14 @@ interface PorductInterface{
     quantity: number
 }
 
-const img_assai = '../../../assets/assaiatacadao.jfif'
-const img_atacadao = '../../../assets/atacadao.png'
-const img_big = '../../../assets/bigbompreco.png'
-const img_gbarbosa = '../../../assets/gbarbosa.png'
-const img_mercantil = '../../../assets/mercantil.png'
-const img_atajun = '../../../assets/atacadao.png'
+const img_assai = './assets/assaiatacadao.jfif'
+const img_atacadao = './assets/atacadao.png'
+const img_big = './assets/bigbompreco.png'
+const img_gbarbosa = './assets/gbarbosa.png'
+const img_mercantil = './assets/mercantil.png'
+const img_atajun = './assets/atacadao.png'
 const img_brasil = ''
-const img_gbjun = '../../../assets/gbarbosa.png'
+const img_gbjun = './assets/gbarbosa.png'
 
 export interface CartMarketValueInterface{
     market_id: number,
@@ -34,7 +34,7 @@ export interface CartMarketValueInterface{
 }
 
 export const markets_util = [
-    { name: 'Assai Acadadista', image: img_assai },
+    { name: 'Assaí', image: img_assai },
     { name: 'Atacadão', image: img_atacadao },
     { name: 'Big Bompreço', image: img_big },
     { name: 'G Barbosa', image: img_gbarbosa },

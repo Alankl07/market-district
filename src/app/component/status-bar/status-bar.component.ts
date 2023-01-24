@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { showImageMarket, showImageProduct } from 'src/app/pipes/images/image.pipes';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-status-bar',
@@ -19,20 +20,20 @@ export class StatusBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showImage(url: string){
+  showImage(url: string) {
     return showImageMarket(url)
   }
 
-  returnInit(){
+  returnInit() {
     this.router.navigate(["/"])
   }
 
-  cartMarket(){
+  cartMarket() {
     this.router.navigate(["/cart-market"])
   }
 
-  login(){
-    window.alert("Oppen login")
+  login() {
+    Swal.fire("MD Informa", "Essa página está em desenvolvimento.", "info")
     this.returnInit()
   }
 

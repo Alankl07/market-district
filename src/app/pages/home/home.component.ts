@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   @Output() testeEmitter: EventEmitter<any> = new EventEmitter()
 
   markets: Market[] = []
-  market_image_default = '../../../assets/market-default.jpg'
+  market_image_default = './assets/market-default.jpg'
 
   constructor(
     private routes: Router

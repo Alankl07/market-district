@@ -10,7 +10,7 @@ import { markets_util } from './ultil/markets';
 })
 export class AppComponent {
   title = 'wab-market-district';
-  logo_ditrict_market = '../../../assets/logo_ditrict_market.png'
+  logo_ditrict_market = './assets/logo_ditrict_market.png'
 
   market: any = null
   constructor(
