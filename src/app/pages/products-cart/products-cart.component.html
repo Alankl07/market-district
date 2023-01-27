@@ -1,36 +1,40 @@
 <div class="container">
-    <div *ngIf="!productsInCart.length" class="emptyCart" >
+    <div *ngIf="!productsInCart.length" class="emptyCart">
         <i class="fa fa-opencart"></i>
         <small>Seu carrinho está vazio.</small>
     </div>
     <div class="content" *ngFor="let market of productsInCart; let market_index = index">
-        <div class="marketName" >
+        <div class="marketName">
             <div>
                 <img src="{{getimageMarket(market.image)}}" alt="">
                 <h4>{{market.market_name}}</h4>
             </div>
             <h4>SubTotal: {{market.subTotal}}</h4>
         </div>
-        <div *ngFor="let product of market.products; let product_index= index">
-            <div class="card">
-                <div class="divImage">
-                    <img src="{{getImage(product.image)}}" alt="product">
-                </div>
-                <div class="divInfo">
-                    <div>
-                        <div class="topInfo">
-                            <h3>{{product.name}}</h3>
+        <div class="containerCard" >
+            <div *ngFor="let product of market.products; let product_index= index">
+                <div class="card">
+                    <div class="divImage">
+                        <img src="{{getImage(product.image)}}" alt="product">
+                    </div>
+                    <div class="divInfo">
+                        <div>
+                            <div class="topInfo">
+                                <h3>{{product.name}}</h3>
+                            </div>
+                            <label>{{product.description}}</label>
                         </div>
-                        <label>{{product.description}}</label>
-                    </div>
-                    <div class="centerInfo">
-                        <h4>Total: </h4>
-                        <h4>R${{totalPrice(product.price, product.id, market.market_id)}}</h4>
-                    </div>
-                    <div class="footerInfo">
-                        <b>Qtd</b>
-                        <input type="number" name="" id="" class="form-control" min="1" [(ngModel)]="product.quantity">
-                        <button (click)="remove(market.market_id, product, market_index, product_index)" class="btn btn-danger">Remover</button>
+                        <div class="centerInfo">
+                            <h4>Total: </h4>
+                            <h4>R${{totalPrice(product.price, product.id, market.market_id)}}</h4>
+                        </div>
+                        <div class="footerInfo">
+                            <b>Qtd</b>
+                            <input type="number" name="" id="" class="form-control" min="1"
+                                [(ngModel)]="product.quantity">
+                            <button (click)="remove(market.market_id, product, market_index, product_index)"
+                                class="btn btn-danger">Remover</button>
+                        </div>
                     </div>
                 </div>
             </div>

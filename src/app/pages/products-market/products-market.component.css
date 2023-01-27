@@ -1,16 +1,16 @@
-.container{
+.divContainer{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
-.container .content{
+.divContainer .content{
     display: flex;
     overflow-x: hidden;
     align-items: flex-start;
 }
 
-.container .content .card{
+.divContainer .content .card{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -26,30 +26,30 @@
     padding-bottom: 10px;
 }
 
-.container .content .card:hover {
+.divContainer .content .card:hover {
     cursor: pointer;
     border: 3px solid #0000FF
 } 
 
-.container .content .card img{
+.divContainer .content .card img{
     max-height: 200px;
 }
 
-.container .content .card .card-description{
+.divContainer .content .card .card-description{
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.container .content .card .card-footer{
+.divContainer .content .card .card-footer{
     border: 0px;
     display: flex;
     z-index: -0;
     justify-content: space-between;
 }
 
-.container .content .card-footer input {
+.divContainer .content .card-footer input {
     border: 0px;
     width: 70px;
 }

@@ -8,13 +8,10 @@
 
 .content{
     display: flex;
-    position: relative;
     flex-direction: row;
-    left: 5%;
     flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-    
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .content .card{

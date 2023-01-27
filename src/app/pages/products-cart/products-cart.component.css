@@ -11,16 +11,22 @@
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #fff;
-    padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container .content .containerCard{
+    background-color: #ebebeb;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px;
 }
 
 .content .marketName{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px;
 }
 
 .content .marketName div{
@@ -132,4 +138,24 @@
 .container footer button{
     background-color: blue;
     color: #fff
+}
+
+
+@media (width < 538px) {
+    .container .card{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .card .divImage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container .card .divInfo .topInfo{
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
 }
