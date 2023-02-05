@@ -33,8 +33,7 @@ export class StatusBarComponent implements OnInit {
   }
 
   login() {
-    Swal.fire("MD Informa", "Essa página está em desenvolvimento.", "info")
-    this.returnInit()
+    this.router.navigate(["/login"])
   }
 
 }

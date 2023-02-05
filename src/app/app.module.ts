@@ -10,6 +10,7 @@ import { ProductsDetailsComponent } from './pages/products-details/products-deta
 import { FormsModule } from '@angular/forms';
 import { ProductsCartComponent } from './pages/products-cart/products-cart.component';
 import { StatusBarComponent } from './component/status-bar/status-bar.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StatusBarComponent } from './component/status-bar/status-bar.component'
     ProductsMarketComponent,
     ProductsDetailsComponent,
     ProductsCartComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

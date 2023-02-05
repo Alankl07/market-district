@@ -1,0 +1,66 @@
+.divContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.divContainer .content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 40%;
+    height: 50vh;
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.divContainer .content .title{
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+}
+
+.divContainer .content .divEmail{
+    margin-bottom: 10px;
+}
+
+.divContainer .content .divEmail label{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.divContainer .content .divPassword label{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.divContainer .content .divRegister{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.divContainer .content .divRegister small{
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+.divContainer .content .divRegister small:hover{
+    color: blue;
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.divContainer .content .divButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divContainer .content .divButton button{
+    width: 150px;
+}
